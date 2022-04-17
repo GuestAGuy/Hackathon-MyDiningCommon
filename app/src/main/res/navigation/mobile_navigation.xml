@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.myapp3.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="com.example.myapp3.ui.Menu.MenuFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_Menu_to_Breakfast"
+            app:destination="@id/navigation_Breakfast"/>
+        <action
+            android:id="@+id/action_Menu_to_Lunch"
+            app:destination="@id/navigation_Lunch"/>
+        <action
+            android:id="@+id/action_Menu_to_Dinner"
+            app:destination="@id/navigation_Dinner"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_Breakfast"
+        android:name="com.example.myapp3.ui.Menu.BreakfastFragment"
+        android:label="@string/title_breakfast"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_Breakfast_to_Menu"
+            app:destination="@id/navigation_menu"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_Lunch"
+        android:name="com.example.myapp3.ui.Menu.LunchFragment"
+        android:label="@string/title_lunch"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_lunch_to_Menu"
+            app:destination="@id/navigation_menu"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_Dinner"
+        android:name="com.example.myapp3.ui.Menu.DinnerFragment"
+        android:label="@string/title_dinner"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_dinner_to_Menu"
+            app:destination="@id/navigation_menu"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.example.myapp3.ui.setting.SettingFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_setting" />
+</navigation>
